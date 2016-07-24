@@ -1,0 +1,5 @@
+services:
+    axiolab.crontask.manager:
+        class: AxiolabCronTaskBundle\Manager\CronTaskManager
+        arguments:
+            - "@doctrine.orm.entity_manager"

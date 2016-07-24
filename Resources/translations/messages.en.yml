@@ -1,0 +1,36 @@
+axiolab:
+    crontask:
+        question:
+            provide_alias: "Executed command alias"
+            provide_interval: "Execution interval (PHP DateInterval code)"
+            provide_first_run: "First execution date"
+        default:
+            alias: "my:awesome:command"
+            interval: "e.g. P1D for once a day"
+            first_run: "Y-m-d H:i:s"
+        message:
+            creation_successfull: "The CRON task has been successfully created"
+            already_running: "The CRON task %alias% is already running"
+            task_error: "The CRON task %alias% last execution resulted an error, please use axiolab:crontask:clearerror command to allow the next execution"
+            task_disabled: "The CRON task %alias% has been disabled"
+            unknown_status: "The CRON task %alias% status is unknown"
+            executing: "Executing %alias%"
+            unknown_task: "%alias% is not a registred task"
+            disabled_success: "%alias% has been successfully disabled"
+            enabled_success: "%alias% has been successfully enabled"
+            error_occured: "An error occured"
+        report:
+            headers:
+                began_at: "Began at"
+                status: "Status"
+                execution_time: "Execution time"
+                task: "Task alias"
+            not_executed: "Not executed"
+            error_occured: "An error occured during the execution of %alias%"
+            nothing_to_execute: "There is no task to execute for now"
+        status:
+            1: "Waiting"
+            2: "Running"
+            3: "Error"
+            4: "Disabled"
+

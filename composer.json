@@ -1,0 +1,25 @@
+{
+    "name" : "axiolab/crontask-bundle",
+    "description" : "Provides a cron task manager based on symfony commands",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Mathieu Muller",
+        "email" : "mathieu.muller@axiocode.com"
+    }],
+    "keywords" : [
+        "symfony CRON command"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Axiolab\\AjaxBundle\\" : ""
+        }
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "1.0.x-dev"
+        }
+    }
+}

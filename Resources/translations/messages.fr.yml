@@ -1,0 +1,35 @@
+axiolab:
+    crontask:
+        question:
+            provide_alias: "Alias de la commande à exécuter"
+            provide_interval: "Intervalle d'exécution (code PHP DateInterval)"
+            provide_first_run: "Date de première exécution"
+        default:
+            alias: "ma:super:commande"
+            interval: "e.g. P1D pour 1 fois par jour"
+            first_run: "Y-m-d H:i:s"
+        message:
+            creation_successfull: "La création de la tâche CRON a bien été effectuée"
+            already_running: "La tâche CRON %alias% est déjà en cours d'exécution"
+            task_error: "La tâche CRON %alias% a rencontré une erreur lors de la dernière exécution, utilisez la commande axiolab:crontask:clearerror pour autoriser sa prochaine exécution"
+            task_disabled: "La tâche CRON %alias% a été désactivée"
+            unknown_status: "Statut de la tâche CRON %alias% inconnu"
+            executing: "%alias% est en cours d'exécution"
+            unknown_task: "%alias% n'est pas une tâche enregistrée"
+            disabled_success: "%alias% a bien été désactivée"
+            enabled_success: "%alias% a bien été activée"
+            error_occured: "Une erreur est survenue"
+        report:
+            headers:
+                began_at: "Débutée à"
+                status: "Statut"
+                execution_time: "Durée de l'exécution"
+                task: "Alias de la tâche"
+            not_executed: "Non executée"
+            error_occured: "Une erreur est survenue pendant l'exécution de %alias%"
+            nothing_to_execute: "Aucune tâche à exécuter pour le moment"
+        status:
+            1: "En attente"
+            2: "En cours"
+            3: "Erreur"
+            4: "Désactivée"
