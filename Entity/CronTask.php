@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity(repositoryClass="AxiolabCronTaskBundle\Repository\CronTaskRepository")
+ * @ORM\Entity(repositoryClass="Axiolab\CronTaskBundle\Repository\CronTaskRepository")
  * @ORM\Table(name="axiolab_cron_task", options={"charset":"UTF8"})
  * @UniqueEntity("alias")
  */

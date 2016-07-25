@@ -2,7 +2,7 @@
 
 namespace Axiolab\CronTaskBundle\Command;
 
-use AxiolabCronTaskBundle\Entity\CronTask;
+use Axiolab\CronTaskBundle\Entity\CronTask;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\OutputInterface;

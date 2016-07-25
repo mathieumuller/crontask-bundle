@@ -2,7 +2,7 @@
 
 namespace Axiolab\CronTaskBundle\Manager;
 
-use AxiolabCronTaskBundle\Entity\CronTask;
+use Axiolab\CronTaskBundle\Entity\CronTask;
 use Doctrine\ORM\EntityManager;
 
 class CronTaskManager
