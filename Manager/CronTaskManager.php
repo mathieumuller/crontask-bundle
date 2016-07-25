@@ -1,6 +1,6 @@
 <?php
 
-namespace AxiolabCronTaskBundle\Manager;
+namespace Axiolab\CronTaskBundle\Manager;
 
 use AxiolabCronTaskBundle\Entity\CronTask;
 use Doctrine\ORM\EntityManager;

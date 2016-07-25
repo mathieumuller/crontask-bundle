@@ -1,6 +1,6 @@
 <?php
 
-namespace AxiolabCronTaskBundle\Command;
+namespace Axiolab\CronTaskBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 

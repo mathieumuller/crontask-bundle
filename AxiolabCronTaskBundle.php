@@ -1,6 +1,6 @@
 <?php
 
-namespace AxiolabCronTaskBundle;
+namespace Axiolab\CronTaskBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

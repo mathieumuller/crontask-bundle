@@ -1,6 +1,6 @@
 <?php
 
-namespace AxiolabCronTaskBundle\Entity;
+namespace Axiolab\CronTaskBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;

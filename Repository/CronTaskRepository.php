@@ -1,6 +1,6 @@
 <?php
 
-namespace AxiolabCronTaskBundle\Repository;
+namespace Axiolab\CronTaskBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

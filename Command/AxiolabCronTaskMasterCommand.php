@@ -1,6 +1,6 @@
 <?php
 
-namespace AxiolabCronTaskBundle\Command;
+namespace Axiolab\CronTaskBundle\Command;
 
 use AxiolabCronTaskBundle\Entity\CronTask;
 use Symfony\Component\Console\Input\InputInterface;
