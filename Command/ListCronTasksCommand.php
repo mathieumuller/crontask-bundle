@@ -28,7 +28,7 @@ class ListCronTasksCommand extends AxiolabCronTaskParent
         ];
 
         foreach ($this->getContainer()->get('axiolab.crontask.manager')->findAll() as $task) {
-            $nextExecutionDT = $task->getLastRun()->add(new \DateInterval($task->getExecutionInterval()));
+            $nextExecutionDT = $task->getLastRun() ? $task->getLastRun()->add(new \DateInterval($task->getExecutionInterval())) : $task->getFirstRun();
             $rows[] = [
                 $task->getAlias(),
                 $this->trans('axiolab.crontask.status.'.$task->getCronStatus()),
