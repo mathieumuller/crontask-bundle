@@ -25,6 +25,7 @@ axiolab:
                 status: "Status"
                 execution_time: "Execution time"
                 task: "Task alias"
+                next_execution: "Next execution"
             not_executed: "Not executed"
             error_occured: "An error occured during the execution of %alias%"
             nothing_to_execute: "There is no task to execute for now"
