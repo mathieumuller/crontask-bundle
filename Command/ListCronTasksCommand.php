@@ -24,12 +24,15 @@ class ListCronTasksCommand extends AxiolabCronTaskParent
         $headers = [
             $this->trans('axiolab.crontask.report.headers.task'),
             $this->trans('axiolab.crontask.report.headers.status'),
+            $this->trans('axiolab.crontask.report.headers.next_execution'),
         ];
 
         foreach ($this->getContainer()->get('axiolab.crontask.manager')->findAll() as $task) {
+            $nextExecutionDT = $task->getLastRun() ? $task->getLastRun()->add(new \DateInterval($task->getExecutionInterval())) : $task->getFirstRun();
             $rows[] = [
                 $task->getAlias(),
                 $this->trans('axiolab.crontask.status.'.$task->getCronStatus()),
+                $nextExecutionDT->format('Y-m-d H:i:s'),
             ];
         }
         $io->table($headers, $rows);
