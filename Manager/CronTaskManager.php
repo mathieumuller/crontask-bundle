@@ -90,4 +90,22 @@ class CronTaskManager
 
         return $result;
     }
+    
+    public function findOneBy(array $search)
+    {
+        return $this->repository->findOneBy($search);
+    }
+
+    public function findBy(array $search, array $orderBy = [])
+    {
+        return $this->repository->findBy($search, $orderBy);
+    }
+
+    public function isRunning($alias)
+    {
+        $task = $this->repository->findOneBy(['alias' => $alias]);
+        $status = !empty($task) ? $task->getCronStatus() : null;
+
+        return $status === CronTask::STATUS_RUNNING;
+    }
 }
