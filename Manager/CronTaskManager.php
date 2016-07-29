@@ -27,8 +27,9 @@ class CronTaskManager
 
     public function end(CronTask $cronTask)
     {
-        $duration = (new \DateTime())->diff($cronTask->getLastRun());
-        $cronTask->setLastExecutionTime($duration)
+        $now = new \DateTime();
+        $duration = $cronTask->getLastRun()->diff($now);
+        $cronTask->setLastExecutionTime($now->setTime($duration->h, $duration->m, $duration->s))
             ->setCronStatus(CronTask::STATUS_WAITING)
         ;
 
