@@ -18,7 +18,7 @@ axiolab:
             unknown_task: "%alias% is not a registred task"
             disabled_success: "%alias% has been successfully disabled"
             enabled_success: "%alias% has been successfully enabled"
-            error_occured: "An error occured"
+            error_occured: "An error occurred"
         report:
             headers:
                 began_at: "Began at"
@@ -27,7 +27,7 @@ axiolab:
                 task: "Task alias"
                 next_execution: "Next execution"
             not_executed: "Not executed"
-            error_occured: "An error occured during the execution of %alias%"
+            error_occured: "An error occurred during the execution of %alias%"
             nothing_to_execute: "There is no task to execute for now"
         status:
             1: "Waiting"
