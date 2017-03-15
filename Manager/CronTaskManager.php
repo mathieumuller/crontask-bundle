@@ -4,15 +4,18 @@ namespace Axiolab\CronTaskBundle\Manager;
 
 use Axiolab\CronTaskBundle\Entity\CronTask;
 use Doctrine\ORM\EntityManager;
+use Psr\Log\LoggerInterface;
 
 class CronTaskManager
 {
     protected $repository;
     protected $em;
+    protected $logger;
 
-    public function __construct(EntityManager $em)
+    public function __construct(EntityManager $em, LoggerInterface $logger)
     {
         $this->em = $em;
+        $this->logger = $logger;
         $this->repository = $this->em->getRepository('AxiolabCronTaskBundle:CronTask');
     }
 
@@ -61,6 +64,8 @@ class CronTaskManager
 
     public function catchError(CronTask $cronTask, \Exception $e)
     {
+        $message = $cronTask->getAlias().' => '.$e->getMessage();
+        $this->logger->log('error', $message);
         $duration = (new \DateTime())->diff($cronTask->getLastRun());
         $cronTask->setLastExecutionTime($duration)
             ->setCronStatus(CronTask::STATUS_ERROR)
@@ -91,7 +96,7 @@ class CronTaskManager
 
         return $result;
     }
-    
+
     public function findOneBy(array $search)
     {
         return $this->repository->findOneBy($search);
