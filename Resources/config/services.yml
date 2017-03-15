@@ -3,3 +3,4 @@ services:
         class: Axiolab\CronTaskBundle\Manager\CronTaskManager
         arguments:
             - "@doctrine.orm.entity_manager"
+            - "@logger"
