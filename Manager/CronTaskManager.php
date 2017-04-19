@@ -19,17 +19,33 @@ class CronTaskManager
         $this->repository = $this->em->getRepository('AxiolabCronTaskBundle:CronTask');
     }
 
+    private function find($id)
+    {
+        return $this->repository->find($id);
+    }
+
     public function begin(CronTask $cronTask)
     {
         $cronTask->setLastRun(new \DateTime())
             ->setCronStatus(CronTask::STATUS_RUNNING)
         ;
-
         $this->em->flush();
     }
 
     public function end(CronTask $cronTask)
     {
+        // If the entity manager has been closed during the command execution, it will be reinitialized here
+        if (!$this->em->isOpen()) {
+            $this->em = $this->em->create(
+                $this->em->getConnection(),
+                $this->em->getConfiguration()
+            );
+
+            //the repository and the cronTask have to be reinitialized too
+            $this->repository = $this->em->getRepository('AxiolabCronTaskBundle:CronTask');
+            $cronTask = $this->find($cronTask->getId());
+        }
+
         $now = new \DateTime();
         $duration = $cronTask->getLastRun()->diff($now);
         $cronTask->setLastExecutionTime($now->setTime($duration->h, $duration->m, $duration->s))
