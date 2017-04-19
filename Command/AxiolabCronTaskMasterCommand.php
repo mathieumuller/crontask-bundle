@@ -89,6 +89,7 @@ class AxiolabCronTaskMasterCommand extends AxiolabCronTaskParent
         $alias = $task->getAlias();
         $namespace = split(' ', $alias)[0];
         $command = $this->getApplication()->find($namespace);
+
         $input = new StringInput($alias);
 
         $io->comment($this->trans('axiolab.crontask.message.executing', ['%alias%' => $alias]));
